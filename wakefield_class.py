@@ -39,7 +39,7 @@ class wakefield:
     
     def E_s(self, z):
         func = np.interp(z, self.x, self.yw_32, left=0, right=0)
-        return self.A * func
+        return self.A * func * 1/np.sqrt(4*np.pi*self.e0)
 
     def B_theta(self, x, y, z):
         func = np.interp(z, self.x, self.yw_52, left=0, right=0)
